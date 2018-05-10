@@ -16,9 +16,6 @@
 	background-color:#e35614;
 }
 	
-a {
-	color:white;
-}
 
 .title-1{
 	

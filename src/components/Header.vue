@@ -6,7 +6,7 @@
 								<a href="/" class="title navbar-brand"> Meneame </a>
 							</nav>
 
-							<div class="col-md-5 user-tools form-group">
+							<div class="col-md-5 user-tools form-group mt-1">
 
 							<ul class="nav">
 								<li clas="nav-item"><a href="#" class="nav-link"> <i class="fas fa-search"></i></a></li>
@@ -27,7 +27,7 @@
 	background-color:#e35614;
 }
 	
-a {
+.nav-link {
 	color:white;
 }
 

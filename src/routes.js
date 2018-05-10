@@ -6,6 +6,7 @@ import Votaciones from './components/Votaciones.vue'
 import Categorias from './components/Categorias.vue'
 import Comentarios from './components/Comentarios.vue'
 
+
 export const routes = [
 
 {path:'/', component : Home, name:'homeLink',

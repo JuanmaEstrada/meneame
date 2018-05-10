@@ -1,20 +1,11 @@
 <template>
-	<div class="row header-top align-items-center">
+	<div class="row header-top text-center">
 
-							<nav class="col-md-7 main-nav">
-								<a href="#" class="title"> Meneame </a>
+							<nav class="col-md-7 main-nav text-center">
+								<a href="#" class="title-1"> Meneame </a>
 							</nav>
 
-							<div class="col-md-5 user-tools form-group">
-
-							<ul class="nav">
-								<li clas="nav-item"><a href="#" class="nav-link"> <i class="fas fa-search"></i></a></li>
-								<li clas="nav-item"><a href="#" class="nav-link">Login</a></li>
-								<li clas="nav-item"><a href="#" class="nav-link">Register</a></li>
-								</li>
-							</ul>
-
-						</div>
+							
 					</div>
 				
 </template>
@@ -25,13 +16,14 @@
 	background-color:#e35614;
 }
 	
-a {
-	color:white;
-}
 
-.title{
-	position: relative;
-    left: 37px;
-    color:white;
+.title-1{
+	
+  color:white;
+  position: relative;
+  left: 221px;
+  font-size: 20px;
+  font-family: 'Russo One', sans-serif;
+
 }
 </style>

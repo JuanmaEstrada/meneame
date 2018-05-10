@@ -1,9 +1,9 @@
 <template>
 	<div class="container">
-    <div class="row align-items-center">
+    <div class="row align-items-center" v-for="article in articles">
       <div class="col-sm-10 col-md-10 mt-5 ">
         <h5>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, laudantium!
+          {{article.titulo}}
         </h5>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, rerum iure ab, laboriosam delectus maiores eaque perspiciatis fuga consequuntur sint deserunt saepe? Repudiandae, eaque ipsum totam rem. Velit, modi, minus.
@@ -23,10 +23,34 @@
           
         </ul>
       </div> 
-      </div>
     </div>
+  </div>
   
 </template>
+
+<script>
+  export default {
+    data(){
+      return{
+        articles : [],
+        titulo:"",
+        entradilla: "",
+        categoria: "",
+        url: ""
+      }
+    },
+    methods: {
+      loadArticles: function(){
+        var url = "http://localhost:3000/api/articles"
+        fetch( url )
+          .then( r => r.json() )
+          .then( data => console.dir( data ) )
+          .catch( e => console.error( 'Something went wrong' ) );
+      }
+  } 
+}
+
+</script>
 
 <style>
 .navs{

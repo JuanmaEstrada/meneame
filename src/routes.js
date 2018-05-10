@@ -22,6 +22,5 @@ export const routes = [
 {path:'/login', component : Login, name:'loginLink'},
 {path:'/register', component : Register, name:'registerLink'},
 {path:'/new-article', component : NewArticle, name:'new-articleLink'},
-{path:'/categorias', component : Categorias, name:'categoriasLink'},
 {path:'*', redirect: '/'}
 ]

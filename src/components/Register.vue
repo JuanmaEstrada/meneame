@@ -9,7 +9,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="textinput">First name</label>  
 		  <div class="col-md-4">
-		  <input id="textinput" name="textinput" type="text" placeholder="John" class="form-control input-md" required="">
+		  <input name="textnput" type="text" placeholder="John" class="form-control input-md" required="">
 		    
 		  </div>
 		</div>
@@ -18,7 +18,7 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="textinput">Last name</label>  
 		  <div class="col-md-4">
-		  <input id="textinput" name="textinput" type="text" placeholder="Smith" class="form-control input-md" required="">
+		  <input name="textinput" type="text" placeholder="Smith" class="form-control input-md" required="">
 		    
 		  </div>
 		</div>
@@ -27,16 +27,16 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="email">Email</label>  
 		  <div class="col-md-4">
-		  <input id="email" name="email" type="text" placeholder="john.smith@mail.com" class="form-control input-md" required="">
+		  <input id="email"  v-model='email'  name="email" type="text" placeholder="john.smith@mail.com" class="form-control input-md" required="">
 		    
 		  </div>
 		</div>
 
 		<!-- Password input-->
 		<div class="form-group">
-		  <label class="col-md-4 control-label" for="passwordinput">Password</label>
+		  <label class="col-md-4 control-label"  for="passwordinput">Password</label>
 		  <div class="col-md-4">
-		    <input id="passwordinput" name="passwordinput" type="password" placeholder="Enter your password" class="form-control input-md" required="">
+		    <input id="passwordinput"  v-model='password'  name="passwordinput" type="password" placeholder="Enter your password" class="form-control input-md" required="">
 		    
 		  </div>
 		</div>
@@ -45,10 +45,42 @@
 		<div class="form-group">
 		  <label class="col-md-4 control-label" for="singlebutton"></label>
 		  <div class="col-md-4">
-		    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Register</button>
+		    <button v-on:click='signUp' id="singlebutton" name="singlebutton" class="btn btn-primary">Register</button>
 		  </div>
 		</div>
 
 		</fieldset>
 	</form>
 </template>
+<script>
+import firebase from 'firebase';
+
+export default {
+	name: 'signUp',
+	data: function() {
+		return {
+			email: '',
+			password: ''
+		}
+	},
+	methods: {
+		signUp: function(){
+			firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+				 (user) => {
+					this.$router.replace('Home')
+				},
+				function (err) {
+					alert('ooops. ' + err.message)
+				}
+				);
+		}		
+
+
+
+
+	}
+}
+
+
+
+</script>
